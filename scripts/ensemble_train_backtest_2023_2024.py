@@ -367,13 +367,30 @@ def main():
         results_file = output_dir / f'ensemble_train_2019-2022_test_2023-2024_{timestamp}.json'
         
         # Filter out dataframe and model from train_metrics before saving
-        train_metrics_filtered = {
-            k: v for k, v in train_metrics.items() 
-            if not isinstance(v, (pd.DataFrame, object)) or isinstance(v, (int, float, str, list, dict))
-        }
-        # Remove non-serializable keys
-        if 'model' in train_metrics_filtered:
-            del train_metrics_filtered['model']
+        train_metrics_filtered = {}
+        for k, v in train_metrics.items():
+            if k in ['model', 'models_trained']:  # Skip model objects
+                continue
+            elif k == 'individual_metrics':  # Handle nested metrics
+                individual_filtered = {}
+                for model_name, model_metrics in v.items():
+                    if model_metrics and isinstance(model_metrics, dict):
+                        individual_filtered[model_name] = {
+                            'accuracy': float(model_metrics.get('accuracy', 0)),
+                            'f1_score': float(model_metrics.get('f1_score', 0))
+                        }
+                train_metrics_filtered[k] = individual_filtered
+            elif isinstance(v, (int, float, str, bool)):
+                train_metrics_filtered[k] = v
+            elif isinstance(v, dict) and not isinstance(v, pd.DataFrame):
+                # Try to serialize dict
+                try:
+                    train_metrics_filtered[k] = {
+                        kk: float(vv) if isinstance(vv, (int, float, np.number)) else str(vv)
+                        for kk, vv in v.items() if not isinstance(vv, (pd.DataFrame, object))
+                    }
+                except:
+                    pass  # Skip if can't serialize
         
         results = {
             'train_period': {

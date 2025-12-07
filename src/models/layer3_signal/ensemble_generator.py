@@ -100,31 +100,49 @@ class EnsembleSignalGenerator:
         if TABNET_AVAILABLE:
             logger.info("\n[2/3] Training TabNet...")
             try:
-                tabnet_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)  # Use XGBoost as fallback
-                tabnet_metrics = tabnet_gen.train(df, label_col, test_size, balance_method, **kwargs)
+                from src.models.layer3_signal.tabnet_wrapper import TabNetWrapper
+                tabnet_gen = TabNetWrapper(use_gpu=self.use_gpu)
+                tabnet_gen.feature_names = self.feature_names
+                tabnet_metrics = tabnet_gen.train(df, label_col, test_size, balance_method)
                 self.models['tabnet'] = tabnet_gen
                 all_metrics['tabnet'] = tabnet_metrics
             except Exception as e:
                 logger.warning(f"TabNet training failed: {e}")
-                all_metrics['tabnet'] = None
+                logger.info("Falling back to XGBoost for TabNet slot...")
+                tabnet_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+                tabnet_metrics = tabnet_gen.train(df, label_col, test_size, balance_method, **kwargs)
+                self.models['tabnet'] = tabnet_gen
+                all_metrics['tabnet'] = tabnet_metrics
         else:
-            logger.warning("TabNet not available, skipping...")
-            all_metrics['tabnet'] = None
+            logger.warning("TabNet not available, using XGBoost as fallback...")
+            tabnet_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+            tabnet_metrics = tabnet_gen.train(df, label_col, test_size, balance_method, **kwargs)
+            self.models['tabnet'] = tabnet_gen
+            all_metrics['tabnet'] = tabnet_metrics
         
         # Train CatBoost  
         if CATBOOST_AVAILABLE:
             logger.info("\n[3/3] Training CatBoost...")
             try:
-                catboost_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)  # Use XGBoost as fallback
-                catboost_metrics = catboost_gen.train(df, label_col, test_size, balance_method, **kwargs)
+                from src.models.layer3_signal.catboost_wrapper import CatBoostWrapper
+                catboost_gen = CatBoostWrapper(use_gpu=self.use_gpu)
+                catboost_gen.feature_names = self.feature_names
+                catboost_metrics = catboost_gen.train(df, label_col, test_size, balance_method)
                 self.models['catboost'] = catboost_gen
                 all_metrics['catboost'] = catboost_metrics
             except Exception as e:
                 logger.warning(f"CatBoost training failed: {e}")
-                all_metrics['catboost'] = None
+                logger.info("Falling back to XGBoost for CatBoost slot...")
+                catboost_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+                catboost_metrics = catboost_gen.train(df, label_col, test_size, balance_method, **kwargs)
+                self.models['catboost'] = catboost_gen
+                all_metrics['catboost'] = catboost_metrics
         else:
-            logger.warning("CatBoost not available, skipping...")
-            all_metrics['catboost'] = None
+            logger.warning("CatBoost not available, using XGBoost as fallback...")
+            catboost_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+            catboost_metrics = catboost_gen.train(df, label_col, test_size, balance_method, **kwargs)
+            self.models['catboost'] = catboost_gen
+            all_metrics['catboost'] = catboost_metrics
         
         # Calculate ensemble performance
         logger.info("\n" + "=" * 80)

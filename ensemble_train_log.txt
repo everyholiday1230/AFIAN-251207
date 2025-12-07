@@ -1,0 +1,282 @@
+[32m2025-12-07 06:40:05.079[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36m__init__[0m:[36m76[0m | [1mCustom indicators initialized with exact TradingView parameters[0m
+[32m2025-12-07 06:40:05.103[0m | [1mINFO    [0m | [36msrc.data_processing.triple_barrier[0m:[36m__init__[0m:[36m58[0m | [1mTriple Barrier initialized: Profit=1.50%, StopLoss=0.50%, TimeLimit=60min[0m
+[32m2025-12-07 06:40:11.111[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m313[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:40:11.112[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m314[0m | [1m🚀 ENSEMBLE TRAINING: 2019-2022, BACKTEST: 2023-2024[0m
+[32m2025-12-07 06:40:11.113[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m315[0m | [1m🤖 Models: XGBoost + TabNet + CatBoost[0m
+[32m2025-12-07 06:40:11.113[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m316[0m | [1m================================================================================[0m
+[32m2025-12-07 06:40:11.114[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m317[0m | [1mInitial Capital: $10,000.00[0m
+[32m2025-12-07 06:40:11.114[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m318[0m | [1mProfit Target:   1.50%[0m
+[32m2025-12-07 06:40:11.114[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m319[0m | [1mStop Loss:       0.50%[0m
+[32m2025-12-07 06:40:11.114[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m320[0m | [1m================================================================================[0m
+[32m2025-12-07 06:40:11.115[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m40[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:40:11.115[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m41[0m | [1m📂 LOADING DATA[0m
+[32m2025-12-07 06:40:11.115[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m42[0m | [1m================================================================================[0m
+[32m2025-12-07 06:40:11.116[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m49[0m | [1mLoading from data/raw/BTCUSDT_15m_2019_2024_full.csv[0m
+[32m2025-12-07 06:40:11.777[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m62[0m | [1m[0m
+[32m2025-12-07 06:40:11.778[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m63[0m | [1m✅ Data loaded[0m
+[32m2025-12-07 06:40:11.780[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m64[0m | [1m   📚 Training:  139,876 candles (2019-01-01 00:00:00 to 2022-12-31 00:00:00)[0m
+[32m2025-12-07 06:40:11.780[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m65[0m | [1m   🧪 Testing:   69,986 candles (2023-01-01 00:00:00 to 2024-12-31 00:00:00)[0m
+[32m2025-12-07 06:40:11.782[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m66[0m | [1m   💰 Price range (train): $3,500 - $61,925[0m
+[32m2025-12-07 06:40:11.782[0m | [1mINFO    [0m | [36m__main__[0m:[36mload_data[0m:[36m67[0m | [1m   💰 Price range (test):  $18,030 - $69,425[0m
+[32m2025-12-07 06:40:11.783[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36m__init__[0m:[36m76[0m | [1mCustom indicators initialized with exact TradingView parameters[0m
+[32m2025-12-07 06:40:11.783[0m | [1mINFO    [0m | [36msrc.data_processing.triple_barrier[0m:[36m__init__[0m:[36m58[0m | [1mTriple Barrier initialized: Profit=1.50%, StopLoss=0.50%, TimeLimit=60min[0m
+[32m2025-12-07 06:40:11.783[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36m__init__[0m:[36m59[0m | [1mEnsemble Signal Generator initialized[0m
+[32m2025-12-07 06:40:11.784[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36m__init__[0m:[36m60[0m | [1m  TabNet available: True[0m
+[32m2025-12-07 06:40:11.784[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36m__init__[0m:[36m61[0m | [1m  CatBoost available: True[0m
+[32m2025-12-07 06:40:11.784[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36m__init__[0m:[36m62[0m | [1m  PyTorch available: True[0m
+[32m2025-12-07 06:40:11.785[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m338[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:40:11.785[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m339[0m | [1m📚 PROCESSING TRAINING DATA[0m
+[32m2025-12-07 06:40:11.785[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m340[0m | [1m================================================================================[0m
+[32m2025-12-07 06:40:11.786[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m74[0m | [1m
+🔧 Processing training data...[0m
+[32m2025-12-07 06:40:11.786[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m309[0m | [1mCalculating all custom indicators...[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m327[0m | [1m✅ All indicators calculated[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m328[0m | [1m   - AI Oscillator: 12 features[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m329[0m | [1m   - Impulse MACD: 3 indicators[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m330[0m | [1m   - Total: 15 indicators[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m331[0m | [1m   - Rows dropped (NaN): 78[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m332[0m | [1m   - Valid rows: 139798[0m
+[32m2025-12-07 06:40:30.428[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m78[0m | [1m   ✅ Indicators calculated (139,798 samples)[0m
+[32m2025-12-07 06:40:48.261[0m | [1mINFO    [0m | [36msrc.data_processing.triple_barrier[0m:[36mcreate_labels[0m:[36m140[0m | [1mLabel distribution: {'SHORT': 85054, 'LONG': 50701, 'NEUTRAL': 4043}[0m
+[32m2025-12-07 06:40:48.360[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m85[0m | [1m   ✅ Labels created (139,798 samples)[0m
+[32m2025-12-07 06:40:48.360[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m86[0m | [1m      LONG: 50,701 (36.3%)[0m
+[32m2025-12-07 06:40:48.360[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m87[0m | [1m      SHORT: 85,054 (60.8%)[0m
+[32m2025-12-07 06:40:48.360[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m88[0m | [1m      NEUTRAL: 4,043 (2.9%)[0m
+[32m2025-12-07 06:40:48.361[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m344[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:40:48.361[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m345[0m | [1m🧪 PROCESSING TESTING DATA[0m
+[32m2025-12-07 06:40:48.361[0m | [1mINFO    [0m | [36m__main__[0m:[36mmain[0m:[36m346[0m | [1m================================================================================[0m
+[32m2025-12-07 06:40:48.361[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m74[0m | [1m
+🔧 Processing testing data...[0m
+[32m2025-12-07 06:40:48.361[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m309[0m | [1mCalculating all custom indicators...[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m327[0m | [1m✅ All indicators calculated[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m328[0m | [1m   - AI Oscillator: 12 features[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m329[0m | [1m   - Impulse MACD: 3 indicators[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m330[0m | [1m   - Total: 15 indicators[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m331[0m | [1m   - Rows dropped (NaN): 78[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36msrc.data_processing.custom_indicators[0m:[36mcalculate_all_indicators[0m:[36m332[0m | [1m   - Valid rows: 69908[0m
+[32m2025-12-07 06:40:57.628[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m78[0m | [1m   ✅ Indicators calculated (69,908 samples)[0m
+[32m2025-12-07 06:41:07.653[0m | [1mINFO    [0m | [36msrc.data_processing.triple_barrier[0m:[36mcreate_labels[0m:[36m140[0m | [1mLabel distribution: {'SHORT': 43092, 'LONG': 22682, 'NEUTRAL': 4134}[0m
+[32m2025-12-07 06:41:07.702[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m85[0m | [1m   ✅ Labels created (69,908 samples)[0m
+[32m2025-12-07 06:41:07.702[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m86[0m | [1m      LONG: 22,682 (32.4%)[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m87[0m | [1m      SHORT: 43,092 (61.6%)[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mprocess_data[0m:[36m88[0m | [1m      NEUTRAL: 4,134 (5.9%)[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m95[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m96[0m | [1m📚 TRAINING ENSEMBLE MODEL ON 2019-2022 DATA[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m97[0m | [1m📚 Models: XGBoost + TabNet + CatBoost[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m98[0m | [1m================================================================================[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m99[0m | [1mTraining samples: 139,798[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m85[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m86[0m | [1m🚀 Training Ensemble Model (XGBoost + TabNet + CatBoost)[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m87[0m | [1m================================================================================[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m92[0m | [1m
+[1/3] Training XGBoost...[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m73[0m | [1mSignal Generator initialized with xgboost[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m74[0m | [1mConfidence threshold: 65.00%[0m
+[32m2025-12-07 06:41:07.703[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m140[0m | [1mTraining signal generator...[0m
+/home/user/webapp/src/models/layer3_signal/signal_generator.py:108: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  clean_df = clean_df[df['tb_exit_reason'] != 'END_OF_DATA'].copy()
+[32m2025-12-07 06:41:07.910[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m114[0m | [1mPrepared 139795 training samples with 15 features[0m
+[32m2025-12-07 06:41:07.918[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m115[0m | [1mLabel distribution: {'SHORT': 85054, 'LONG': 50701, 'NEUTRAL': 4040}[0m
+[32m2025-12-07 06:41:08.030[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m154[0m | [1mClass weights: {'LONG': 0.9190811489582716, 'NEUTRAL': 11.534240924092408, 'SHORT': 0.5478676291924346}[0m
+[32m2025-12-07 06:41:08.170[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m161[0m | [1mTraining samples: 111836, Test samples: 27959[0m
+/usr/local/lib/python3.12/site-packages/xgboost/training.py:199: UserWarning: [06:41:08] WARNING: /workspace/src/learner.cc:790: 
+Parameters: { "predictor" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+[0]	validation_0-mlogloss:1.09734	validation_1-mlogloss:1.09763
+[50]	validation_0-mlogloss:1.05459	validation_1-mlogloss:1.06560
+[100]	validation_0-mlogloss:1.02449	validation_1-mlogloss:1.04406
+[150]	validation_0-mlogloss:0.99675	validation_1-mlogloss:1.02386
+[200]	validation_0-mlogloss:0.97170	validation_1-mlogloss:1.00578
+[250]	validation_0-mlogloss:0.94756	validation_1-mlogloss:0.98868
+[300]	validation_0-mlogloss:0.92474	validation_1-mlogloss:0.97233
+[350]	validation_0-mlogloss:0.90384	validation_1-mlogloss:0.95781
+[400]	validation_0-mlogloss:0.88351	validation_1-mlogloss:0.94344
+[450]	validation_0-mlogloss:0.86490	validation_1-mlogloss:0.93068
+[499]	validation_0-mlogloss:0.84713	validation_1-mlogloss:0.91815
+[32m2025-12-07 06:41:42.515[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m258[0m | [1m✅ Training completed[0m
+[32m2025-12-07 06:41:42.515[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m259[0m | [1mTest Accuracy: 0.5788[0m
+[32m2025-12-07 06:41:42.515[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m260[0m | [1mF1 Score (weighted): 0.6025[0m
+[32m2025-12-07 06:41:42.515[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m261[0m | [1mConfidence-filtered accuracy: 0.8794 (506/27959 samples kept)[0m
+[32m2025-12-07 06:41:42.515[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m264[0m | [1m
+Per-class metrics:[0m
+[32m2025-12-07 06:41:42.516[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  LONG: Precision=0.519, Recall=0.563, F1=0.540[0m
+[32m2025-12-07 06:41:42.516[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  SHORT: Precision=0.105, Recall=0.429, F1=0.169[0m
+[32m2025-12-07 06:41:42.516[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  NEUTRAL: Precision=0.742, Recall=0.595, F1=0.660[0m
+[32m2025-12-07 06:41:42.516[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m270[0m | [1m
+Top 10 important features:[0m
+[32m2025-12-07 06:41:42.516[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F3_scaled_rsi: 0.0705[0m
+[32m2025-12-07 06:41:42.517[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_macd: 0.0705[0m
+[32m2025-12-07 06:41:42.517[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_signal: 0.0702[0m
+[32m2025-12-07 06:41:42.517[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F1_UPRSI: 0.0691[0m
+[32m2025-12-07 06:41:42.517[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F6_momentum_balance: 0.0682[0m
+[32m2025-12-07 06:41:42.518[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F2_UPStoch: 0.0678[0m
+[32m2025-12-07 06:41:42.518[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_histogram: 0.0677[0m
+[32m2025-12-07 06:41:42.518[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F7_relative_absolute_diff: 0.0669[0m
+[32m2025-12-07 06:41:42.518[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F11_avg_volatility: 0.0662[0m
+[32m2025-12-07 06:41:42.518[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F4_scaled_mfi: 0.0659[0m
+[32m2025-12-07 06:41:42.519[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m101[0m | [1m
+[2/3] Training TabNet...[0m
+[32m2025-12-07 06:41:42.519[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m73[0m | [1mSignal Generator initialized with xgboost[0m
+[32m2025-12-07 06:41:42.519[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m74[0m | [1mConfidence threshold: 65.00%[0m
+[32m2025-12-07 06:41:42.519[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m140[0m | [1mTraining signal generator...[0m
+/home/user/webapp/src/models/layer3_signal/signal_generator.py:108: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  clean_df = clean_df[df['tb_exit_reason'] != 'END_OF_DATA'].copy()
+[32m2025-12-07 06:41:42.730[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m114[0m | [1mPrepared 139795 training samples with 15 features[0m
+[32m2025-12-07 06:41:42.753[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m115[0m | [1mLabel distribution: {'SHORT': 85054, 'LONG': 50701, 'NEUTRAL': 4040}[0m
+[32m2025-12-07 06:41:42.868[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m154[0m | [1mClass weights: {'LONG': 0.9190811489582716, 'NEUTRAL': 11.534240924092408, 'SHORT': 0.5478676291924346}[0m
+[32m2025-12-07 06:41:43.019[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m161[0m | [1mTraining samples: 111836, Test samples: 27959[0m
+/usr/local/lib/python3.12/site-packages/xgboost/training.py:199: UserWarning: [06:41:43] WARNING: /workspace/src/learner.cc:790: 
+Parameters: { "predictor" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+[0]	validation_0-mlogloss:1.09734	validation_1-mlogloss:1.09763
+[50]	validation_0-mlogloss:1.05459	validation_1-mlogloss:1.06560
+[100]	validation_0-mlogloss:1.02449	validation_1-mlogloss:1.04406
+[150]	validation_0-mlogloss:0.99675	validation_1-mlogloss:1.02386
+[200]	validation_0-mlogloss:0.97170	validation_1-mlogloss:1.00578
+[250]	validation_0-mlogloss:0.94756	validation_1-mlogloss:0.98868
+[300]	validation_0-mlogloss:0.92474	validation_1-mlogloss:0.97233
+[350]	validation_0-mlogloss:0.90384	validation_1-mlogloss:0.95781
+[400]	validation_0-mlogloss:0.88351	validation_1-mlogloss:0.94344
+[450]	validation_0-mlogloss:0.86490	validation_1-mlogloss:0.93068
+[499]	validation_0-mlogloss:0.84713	validation_1-mlogloss:0.91815
+[32m2025-12-07 06:42:16.975[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m258[0m | [1m✅ Training completed[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m259[0m | [1mTest Accuracy: 0.5788[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m260[0m | [1mF1 Score (weighted): 0.6025[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m261[0m | [1mConfidence-filtered accuracy: 0.8794 (506/27959 samples kept)[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m264[0m | [1m
+Per-class metrics:[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  LONG: Precision=0.519, Recall=0.563, F1=0.540[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  SHORT: Precision=0.105, Recall=0.429, F1=0.169[0m
+[32m2025-12-07 06:42:16.976[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  NEUTRAL: Precision=0.742, Recall=0.595, F1=0.660[0m
+[32m2025-12-07 06:42:16.977[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m270[0m | [1m
+Top 10 important features:[0m
+[32m2025-12-07 06:42:16.977[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F3_scaled_rsi: 0.0705[0m
+[32m2025-12-07 06:42:16.977[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_macd: 0.0705[0m
+[32m2025-12-07 06:42:16.978[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_signal: 0.0702[0m
+[32m2025-12-07 06:42:16.978[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F1_UPRSI: 0.0691[0m
+[32m2025-12-07 06:42:16.978[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F6_momentum_balance: 0.0682[0m
+[32m2025-12-07 06:42:16.978[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F2_UPStoch: 0.0678[0m
+[32m2025-12-07 06:42:16.979[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_histogram: 0.0677[0m
+[32m2025-12-07 06:42:16.979[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F7_relative_absolute_diff: 0.0669[0m
+[32m2025-12-07 06:42:16.979[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F11_avg_volatility: 0.0662[0m
+[32m2025-12-07 06:42:16.979[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F4_scaled_mfi: 0.0659[0m
+[32m2025-12-07 06:42:16.980[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m116[0m | [1m
+[3/3] Training CatBoost...[0m
+[32m2025-12-07 06:42:16.980[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m73[0m | [1mSignal Generator initialized with xgboost[0m
+[32m2025-12-07 06:42:16.980[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m__init__[0m:[36m74[0m | [1mConfidence threshold: 65.00%[0m
+[32m2025-12-07 06:42:16.980[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m140[0m | [1mTraining signal generator...[0m
+/home/user/webapp/src/models/layer3_signal/signal_generator.py:108: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  clean_df = clean_df[df['tb_exit_reason'] != 'END_OF_DATA'].copy()
+[32m2025-12-07 06:42:17.131[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m114[0m | [1mPrepared 139795 training samples with 15 features[0m
+[32m2025-12-07 06:42:17.139[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mprepare_training_data[0m:[36m115[0m | [1mLabel distribution: {'SHORT': 85054, 'LONG': 50701, 'NEUTRAL': 4040}[0m
+[32m2025-12-07 06:42:17.247[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m154[0m | [1mClass weights: {'LONG': 0.9190811489582716, 'NEUTRAL': 11.534240924092408, 'SHORT': 0.5478676291924346}[0m
+[32m2025-12-07 06:42:17.373[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36mtrain[0m:[36m161[0m | [1mTraining samples: 111836, Test samples: 27959[0m
+/usr/local/lib/python3.12/site-packages/xgboost/training.py:199: UserWarning: [06:42:17] WARNING: /workspace/src/learner.cc:790: 
+Parameters: { "predictor" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+[0]	validation_0-mlogloss:1.09734	validation_1-mlogloss:1.09763
+[50]	validation_0-mlogloss:1.05459	validation_1-mlogloss:1.06560
+[100]	validation_0-mlogloss:1.02449	validation_1-mlogloss:1.04406
+[150]	validation_0-mlogloss:0.99675	validation_1-mlogloss:1.02386
+[200]	validation_0-mlogloss:0.97170	validation_1-mlogloss:1.00578
+[250]	validation_0-mlogloss:0.94756	validation_1-mlogloss:0.98868
+[300]	validation_0-mlogloss:0.92474	validation_1-mlogloss:0.97233
+[350]	validation_0-mlogloss:0.90384	validation_1-mlogloss:0.95781
+[400]	validation_0-mlogloss:0.88351	validation_1-mlogloss:0.94344
+[450]	validation_0-mlogloss:0.86490	validation_1-mlogloss:0.93068
+[499]	validation_0-mlogloss:0.84713	validation_1-mlogloss:0.91815
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m258[0m | [1m✅ Training completed[0m
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m259[0m | [1mTest Accuracy: 0.5788[0m
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m260[0m | [1mF1 Score (weighted): 0.6025[0m
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m261[0m | [1mConfidence-filtered accuracy: 0.8794 (506/27959 samples kept)[0m
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m264[0m | [1m
+Per-class metrics:[0m
+[32m2025-12-07 06:42:51.204[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  LONG: Precision=0.519, Recall=0.563, F1=0.540[0m
+[32m2025-12-07 06:42:51.205[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  SHORT: Precision=0.105, Recall=0.429, F1=0.169[0m
+[32m2025-12-07 06:42:51.205[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m267[0m | [1m  NEUTRAL: Precision=0.742, Recall=0.595, F1=0.660[0m
+[32m2025-12-07 06:42:51.205[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m270[0m | [1m
+Top 10 important features:[0m
+[32m2025-12-07 06:42:51.205[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F3_scaled_rsi: 0.0705[0m
+[32m2025-12-07 06:42:51.205[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_macd: 0.0705[0m
+[32m2025-12-07 06:42:51.206[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_signal: 0.0702[0m
+[32m2025-12-07 06:42:51.206[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F1_UPRSI: 0.0691[0m
+[32m2025-12-07 06:42:51.206[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F6_momentum_balance: 0.0682[0m
+[32m2025-12-07 06:42:51.206[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F2_UPStoch: 0.0678[0m
+[32m2025-12-07 06:42:51.207[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  impulse_histogram: 0.0677[0m
+[32m2025-12-07 06:42:51.207[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F7_relative_absolute_diff: 0.0669[0m
+[32m2025-12-07 06:42:51.207[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F11_avg_volatility: 0.0662[0m
+[32m2025-12-07 06:42:51.207[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.signal_generator[0m:[36m_train_xgboost[0m:[36m272[0m | [1m  F4_scaled_mfi: 0.0659[0m
+[32m2025-12-07 06:42:51.208[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m130[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:42:51.208[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m131[0m | [1m📊 Model Comparison[0m
+[32m2025-12-07 06:42:51.208[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m132[0m | [1m================================================================================[0m
+[32m2025-12-07 06:42:51.208[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m136[0m | [1m  XGBOOST: Accuracy=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.208[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m136[0m | [1m  TABNET: Accuracy=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m136[0m | [1m  CATBOOST: Accuracy=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36msrc.models.layer3_signal.ensemble_generator[0m:[36mtrain[0m:[36m148[0m | [1m
+✅ Ensemble training completed![0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m108[0m | [1m[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m109[0m | [1m✅ ENSEMBLE TRAINING COMPLETE[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m110[0m | [1m   📊 Ensemble Accuracy:  0.5788[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m111[0m | [1m   📊 Ensemble F1 Score:  0.6025[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m115[0m | [1m
+   📈 Individual Model Performance:[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m118[0m | [1m      XGBOOST: Acc=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.209[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m118[0m | [1m      TABNET: Acc=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.210[0m | [1mINFO    [0m | [36m__main__[0m:[36mtrain_model[0m:[36m118[0m | [1m      CATBOOST: Acc=0.5788, F1=0.6025[0m
+[32m2025-12-07 06:42:51.210[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m126[0m | [1m
+================================================================================[0m
+[32m2025-12-07 06:42:51.210[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m127[0m | [1m🧪 BACKTESTING ON 2023-2024 DATA[0m
+[32m2025-12-07 06:42:51.210[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m128[0m | [1m================================================================================[0m
+[32m2025-12-07 06:42:51.210[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m135[0m | [1mGenerating signals...[0m
+[32m2025-12-07 06:43:11.176[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m139[0m | [1mRunning backtest...[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m268[0m | [1m[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m269[0m | [1m================================================================================[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m270[0m | [1m📊 BACKTEST RESULTS[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m271[0m | [1m================================================================================[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m272[0m | [1m   💰 Initial Capital:      $10,000.00[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m273[0m | [1m   💰 Final Capital:        $24,750.23[0m
+[32m2025-12-07 06:43:22.406[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m274[0m | [1m   📈 Total Return:         147.50%[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m275[0m | [1m   📊 Sharpe Ratio:         12.954[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m276[0m | [1m   📉 Max Drawdown:         0.39%[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m277[0m | [1m   ✅ Win Rate:             72.17%[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m278[0m | [1m   🔢 Total Trades:         1042[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m279[0m | [1m   ✅ Winning Trades:       752[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m280[0m | [1m   ❌ Losing Trades:        290[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m281[0m | [1m   💵 Average Win:          $23.97[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m282[0m | [1m   💸 Average Loss:         $-11.30[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m283[0m | [1m   📊 Profit Factor:        5.50[0m
+[32m2025-12-07 06:43:22.407[0m | [1mINFO    [0m | [36m__main__[0m:[36mbacktest_continuous[0m:[36m284[0m | [1m================================================================================[0m
+[32m2025-12-07 06:43:22.463[0m | [31m[1mERROR   [0m | [36m__main__[0m:[36mmain[0m:[36m431[0m | [31m[1m❌ Pipeline failed: Object of type DataFrame is not JSON serializable[0m
+Traceback (most recent call last):
+  File "/home/user/webapp/scripts/ensemble_train_backtest_2023_2024.py", line 436, in <module>
+    main()
+  File "/home/user/webapp/scripts/ensemble_train_backtest_2023_2024.py", line 416, in main
+    json.dump(serializable_results, f, indent=2)
+  File "/usr/local/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/local/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/local/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/local/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 2 more times]
+  File "/usr/local/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
