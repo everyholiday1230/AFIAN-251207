@@ -121,7 +121,7 @@ def train_model(train_df, signal_generator):
 
 
 def backtest_continuous(test_df, signal_generator, indicator_calculator, initial_capital=10000.0, 
-                       profit_target=0.015, stop_loss=0.005):
+                       profit_target=0.015, stop_loss=0.005, confidence_threshold=0.50):
     """Run continuous backtest on test data."""
     logger.info("\n" + "=" * 80)
     logger.info("🧪 BACKTESTING ON 2023-2024 DATA")
@@ -183,7 +183,7 @@ def backtest_continuous(test_df, signal_generator, indicator_calculator, initial
                 position = None
         
         # Enter new position
-        if position is None and signal in ['LONG', 'SHORT'] and conf >= 0.65:
+        if position is None and signal in ['LONG', 'SHORT'] and conf >= confidence_threshold:
             # Simple position sizing: 8% of capital
             position_size = capital * 0.08
             
@@ -307,6 +307,7 @@ def main():
     parser.add_argument('--capital', type=float, default=10000, help='Initial capital')
     parser.add_argument('--profit', type=float, default=0.015, help='Profit target (default: 1.5%)')
     parser.add_argument('--stoploss', type=float, default=0.005, help='Stop loss (default: 0.5%)')
+    parser.add_argument('--confidence', type=float, default=0.50, help='Confidence threshold (default: 0.50)')
     
     args = parser.parse_args()
     
@@ -314,9 +315,10 @@ def main():
     logger.info("🚀 ENSEMBLE TRAINING: 2019-2022, BACKTEST: 2023-2024")
     logger.info("🤖 Models: XGBoost + TabNet + CatBoost")
     logger.info("=" * 80)
-    logger.info(f"Initial Capital: ${args.capital:,.2f}")
-    logger.info(f"Profit Target:   {args.profit:.2%}")
-    logger.info(f"Stop Loss:       {args.stoploss:.2%}")
+    logger.info(f"Initial Capital:        ${args.capital:,.2f}")
+    logger.info(f"Profit Target:          {args.profit:.2%}")
+    logger.info(f"Stop Loss:              {args.stoploss:.2%}")
+    logger.info(f"Confidence Threshold:   {args.confidence:.2%}")
     logger.info("=" * 80)
     
     start_time = datetime.now()
@@ -332,7 +334,7 @@ def main():
             stop_loss=args.stoploss,
             time_limit_minutes=60
         )
-        signal_generator = EnsembleSignalGenerator(confidence_threshold=0.50)  # Lower threshold for more signals!
+        signal_generator = EnsembleSignalGenerator(confidence_threshold=args.confidence)
         
         # Process training data
         logger.info("\n" + "=" * 80)
@@ -356,7 +358,8 @@ def main():
             indicator_calculator,
             initial_capital=args.capital,
             profit_target=args.profit,
-            stop_loss=args.stoploss
+            stop_loss=args.stoploss,
+            confidence_threshold=args.confidence
         )
         
         # Save results
@@ -408,7 +411,8 @@ def main():
             'parameters': {
                 'initial_capital': args.capital,
                 'profit_target': args.profit,
-                'stop_loss': args.stoploss
+                'stop_loss': args.stoploss,
+                'confidence_threshold': args.confidence
             }
         }
         
