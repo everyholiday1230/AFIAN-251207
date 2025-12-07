@@ -92,9 +92,10 @@ tensorboard_logs/
 mlruns/
 
 # ===================================================================
-# Models
+# Trained Models (not source code)
 # ===================================================================
-models/
+# Note: src/models/ contains source code and should be committed
+# Only ignore trained model files in data/models/
 checkpoints/
 *.pt
 *.pth
