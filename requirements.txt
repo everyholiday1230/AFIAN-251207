@@ -1,0 +1,139 @@
+# ===================================================================
+# Crypto Futures AI Trading System - Production Dependencies
+# ===================================================================
+# Phase 1: Stable Foundation (All Required Packages)
+# Updated: 2025-12-07
+# ===================================================================
+
+# Core Data Science & Machine Learning
+numpy==1.26.4
+pandas==2.2.0
+scikit-learn==1.4.0
+scipy==1.12.0
+
+# Time Series & Deep Learning Models
+torch==2.2.0
+pytorch-lightning==2.1.4
+tensorflow==2.15.0
+keras==3.0.0
+
+# Advanced ML Models (Phase 1)
+xgboost==2.0.3
+lightgbm==4.3.0
+catboost==1.2.2
+
+# Advanced ML Models (Phase 2 - Ready to activate)
+pytorch-forecasting==1.0.0  # TFT (Temporal Fusion Transformer)
+# TSMixer and PatchTST will be implemented custom
+
+# Tabular Deep Learning
+pytorch-tabnet==4.1.0  # TabNet
+# FT-Transformer will use custom implementation
+
+# Reinforcement Learning
+stable-baselines3==2.2.1  # SAC, PPO
+gymnasium==0.29.1
+tensorboard==2.15.1
+
+# Cryptocurrency Exchange APIs
+ccxt==4.2.25  # Unified exchange API
+python-binance==1.0.19  # Binance-specific optimized API
+websocket-client==1.7.0
+
+# Database & Storage
+psycopg2-binary==2.9.9  # PostgreSQL + TimescaleDB
+sqlalchemy==2.0.25
+redis==5.0.1
+
+# Data Processing & Feature Engineering
+ta==0.11.0  # Technical Analysis Library
+pandas-ta==0.3.14b  # Advanced TA indicators
+numba==0.59.0  # JIT compilation for speed
+
+# Backtesting & Quantitative Analysis
+vectorbt==0.26.0  # Fast vectorized backtesting
+empyrical-reloaded==0.5.9  # Performance metrics
+
+# Visualization & Monitoring
+plotly==5.18.0
+matplotlib==3.8.2
+seaborn==0.13.1
+dash==2.14.2
+dash-bootstrap-components==1.5.0
+
+# API & Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Configuration & Environment
+python-dotenv==1.0.0
+hydra-core==1.3.2
+omegaconf==2.3.0
+
+# Logging & Monitoring
+loguru==0.7.2
+prometheus-client==0.19.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2024.1
+tqdm==4.66.1
+joblib==1.3.2
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+
+# Code Quality
+black==24.1.1
+isort==5.13.2
+flake8==7.0.0
+mypy==1.8.0
+
+# Jupyter & Development
+jupyter==1.0.0
+ipykernel==6.29.0
+ipywidgets==8.1.1
+notebook==7.0.7
+
+# Performance Optimization
+cython==3.0.8
+bottleneck==1.3.7
+
+# Security
+cryptography==42.0.0
+
+# HTTP & Async
+httpx==0.26.0
+aiohttp==3.9.1
+aiofiles==23.2.1
+
+# Data Validation
+marshmallow==3.20.2
+cerberus==1.3.5
+
+# Scheduling
+apscheduler==3.10.4
+
+# System Monitoring
+psutil==5.9.8
+
+# Timezone
+tzdata==2023.4
+
+# ===================================================================
+# Phase 2 Advanced Models (Commented - Activate when needed)
+# ===================================================================
+# timm==0.9.12  # Advanced vision transformers (for chart pattern recognition)
+# transformers==4.37.0  # Hugging Face transformers
+# datasets==2.16.1
+
+# ===================================================================
+# Optional: GPU Acceleration (Uncomment if GPU available)
+# ===================================================================
+# torch==2.2.0+cu118  # CUDA 11.8
+# tensorflow-gpu==2.15.0
