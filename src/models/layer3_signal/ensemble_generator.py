@@ -44,19 +44,22 @@ class EnsembleSignalGenerator:
     - CatBoost (gradient boosting with categorical features support)
     """
     
-    def __init__(self, use_gpu: bool = False):
+    def __init__(self, use_gpu: bool = False, confidence_threshold: float = 0.65):
         """
         Initialize ensemble signal generator.
         
         Args:
             use_gpu: Use GPU acceleration if available
+            confidence_threshold: Minimum confidence level for predictions (0.0-1.0)
         """
         self.use_gpu = use_gpu
+        self.confidence_threshold = confidence_threshold
         self.models = {}
         self.feature_names = []
         self.is_trained = False
         
         logger.info("Ensemble Signal Generator initialized")
+        logger.info(f"  Confidence threshold: {confidence_threshold:.2%}")
         logger.info(f"  TabNet available: {TABNET_AVAILABLE}")
         logger.info(f"  CatBoost available: {CATBOOST_AVAILABLE}")
         logger.info(f"  PyTorch available: {TORCH_AVAILABLE}")
@@ -90,7 +93,7 @@ class EnsembleSignalGenerator:
         
         # Train XGBoost
         logger.info("\n[1/3] Training XGBoost...")
-        xgb_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+        xgb_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu, confidence_threshold=self.confidence_threshold)
         xgb_metrics = xgb_gen.train(df, label_col, test_size, balance_method, **kwargs)
         self.models['xgboost'] = xgb_gen
         all_metrics['xgboost'] = xgb_metrics
@@ -109,7 +112,7 @@ class EnsembleSignalGenerator:
             except Exception as e:
                 logger.warning(f"TabNet training failed: {e}")
                 logger.info("Falling back to XGBoost for TabNet slot...")
-                tabnet_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+                tabnet_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu, confidence_threshold=self.confidence_threshold)
                 tabnet_metrics = tabnet_gen.train(df, label_col, test_size, balance_method, **kwargs)
                 self.models['tabnet'] = tabnet_gen
                 all_metrics['tabnet'] = tabnet_metrics
@@ -133,7 +136,7 @@ class EnsembleSignalGenerator:
             except Exception as e:
                 logger.warning(f"CatBoost training failed: {e}")
                 logger.info("Falling back to XGBoost for CatBoost slot...")
-                catboost_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu)
+                catboost_gen = SignalGenerator(model_type="xgboost", use_gpu=self.use_gpu, confidence_threshold=self.confidence_threshold)
                 catboost_metrics = catboost_gen.train(df, label_col, test_size, balance_method, **kwargs)
                 self.models['catboost'] = catboost_gen
                 all_metrics['catboost'] = catboost_metrics
@@ -217,6 +220,10 @@ class EnsembleSignalGenerator:
         
         # Get confidence (max probability)
         confidence = np.max(ensemble_proba, axis=1)
+        
+        # Apply confidence threshold
+        low_confidence_mask = confidence < self.confidence_threshold
+        signals[low_confidence_mask] = 'NEUTRAL'
         
         if return_probabilities:
             return signals, confidence, ensemble_proba

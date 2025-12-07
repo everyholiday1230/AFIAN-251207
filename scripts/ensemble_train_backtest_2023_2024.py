@@ -332,7 +332,7 @@ def main():
             stop_loss=args.stoploss,
             time_limit_minutes=60
         )
-        signal_generator = EnsembleSignalGenerator()  # Use ensemble model!
+        signal_generator = EnsembleSignalGenerator(confidence_threshold=0.50)  # Lower threshold for more signals!
         
         # Process training data
         logger.info("\n" + "=" * 80)

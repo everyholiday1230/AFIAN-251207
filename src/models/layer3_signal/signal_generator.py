@@ -52,13 +52,14 @@ class SignalGenerator:
     Phase 2: Ensemble with TabNet + FT-Transformer
     """
     
-    def __init__(self, model_type: str = "xgboost", use_gpu: bool = False):
+    def __init__(self, model_type: str = "xgboost", use_gpu: bool = False, confidence_threshold: float = None):
         """
         Initialize signal generator.
         
         Args:
             model_type: Type of model ('xgboost', 'tabnet', 'ensemble')
             use_gpu: Use GPU acceleration if available
+            confidence_threshold: Minimum confidence threshold (0.0-1.0), defaults to config value
         """
         self.model_type = model_type
         self.use_gpu = use_gpu
@@ -68,7 +69,10 @@ class SignalGenerator:
         self.class_weights = None
         
         # Signal confidence threshold
-        self.confidence_threshold = config.model.signal_confidence_threshold
+        if confidence_threshold is not None:
+            self.confidence_threshold = confidence_threshold
+        else:
+            self.confidence_threshold = config.model.signal_confidence_threshold
         
         logger.info(f"Signal Generator initialized with {model_type}")
         logger.info(f"Confidence threshold: {self.confidence_threshold:.2%}")
