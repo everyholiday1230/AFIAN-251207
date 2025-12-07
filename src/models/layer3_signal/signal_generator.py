@@ -97,7 +97,8 @@ class SignalGenerator:
                 label_col, 'tb_exit_price', 'tb_exit_time', 'tb_return',
                 'tb_holding_minutes', 'tb_exit_reason',
                 'open', 'high', 'low', 'close', 'volume',  # Raw OHLCV
-                'regime'  # Will be used as categorical feature
+                'regime',  # Will be used as categorical feature
+                'impulse_color'  # Used only in indicator calculation, not for model training
             ]
             
             feature_cols = [col for col in df.columns if col not in exclude_cols]
@@ -207,7 +208,7 @@ class SignalGenerator:
         # Override with user params
         params.update(kwargs)
         
-        # Train model
+        # Train model (eval_metric already in params)
         self.model = xgb.XGBClassifier(**params)
         
         self.model.fit(
@@ -215,8 +216,6 @@ class SignalGenerator:
             y_train_encoded,
             sample_weight=sample_weights,
             eval_set=[(X_train, y_train_encoded), (X_test, y_test_encoded)],
-            eval_metric='mlogloss',
-            early_stopping_rounds=50,
             verbose=50
         )
         
@@ -330,8 +329,15 @@ class SignalGenerator:
         if not self.is_trained:
             raise ValueError("Model not trained. Call train() first.")
         
-        # Prepare features
-        X = df[self.feature_names]
+        # Prepare features (use trained feature names, or infer from input)
+        if hasattr(self, 'feature_names') and self.feature_names is not None:
+            # Use saved feature names from training
+            available_features = [f for f in self.feature_names if f in df.columns]
+            X = df[available_features]
+        else:
+            # Fallback: use all numeric columns
+            X = df.select_dtypes(include=[np.number])
+            self.feature_names = X.columns.tolist()
         
         # Predict
         predictions = self.model.predict(X)
